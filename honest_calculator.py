@@ -36,7 +36,7 @@ def is_one_digit(num):
         return True
     return False
 
-# Function that checks "how lazy" the user is
+# Function that determines "how lazy" the user is
 def check(v1, v2, v3):
     msg = ""
     if is_one_digit(v1) and is_one_digit(v2):
@@ -109,11 +109,11 @@ while True:
 
     print(result)
 
-    while True:  # Asks if user want's to store the result
+    while True:  # Asks if user wants to store the result
         print(messages(4))
         answer = input()
         if answer == 'y':
-            if is_one_digit(result):  # If result is one digit, asks user if he really want's to store the result
+            if is_one_digit(result):  # If result is one digit, asks user if he really wants to store the result
                 msg_index = 10
                 while True:
                     print(messages(msg_index))
@@ -134,7 +134,7 @@ while True:
         elif answer == 'n':
             break
 
-    print(messages(5))  # Asks user if he want's to continue calculations
+    print(messages(5))  # Asks user if he wants to continue calculations
     answer = input()
     if answer.lower() == "y":
         continue

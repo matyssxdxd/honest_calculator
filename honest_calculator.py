@@ -1,3 +1,4 @@
+# Function for messages, because the task used variable msg_index to determine which message it should print
 def messages(message_index):
     msg_text = ""
     if message_index == 0:
@@ -28,14 +29,14 @@ def messages(message_index):
         msg_text = "Last chance! Do you really want to embarrass yourself? (y / n)"
     return msg_text
 
-
+# Fucntion that checks if number is only 1 digit
 def is_one_digit(num):
     num = float(num)
     if -10 < num < 10 and num == int(num):
         return True
     return False
 
-
+# Function that checks "how lazy" the user is
 def check(v1, v2, v3):
     msg = ""
     if is_one_digit(v1) and is_one_digit(v2):
@@ -70,7 +71,7 @@ operators = ["+", "-", "*", "/"]
 memory = 0
 result = 0
 
-
+# Start of the calculator
 while True:
     print(messages(0))
     x, operator, y = input().split()
@@ -108,11 +109,11 @@ while True:
 
     print(result)
 
-    while True:
+    while True:  # Asks if user want's to store the result
         print(messages(4))
         answer = input()
         if answer == 'y':
-            if is_one_digit(result):
+            if is_one_digit(result):  # If result is one digit, asks user if he really want's to store the result
                 msg_index = 10
                 while True:
                     print(messages(msg_index))
@@ -133,7 +134,7 @@ while True:
         elif answer == 'n':
             break
 
-    print(messages(5))
+    print(messages(5))  # Asks user if he want's to continue calculations
     answer = input()
     if answer.lower() == "y":
         continue
